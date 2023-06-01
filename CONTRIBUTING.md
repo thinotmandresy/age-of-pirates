@@ -1,136 +1,132 @@
-# Contributing
+# Age of Pirates contribution guide
 
-> ⚠️ If you're not already a team member, please contact roda2324#9206 on Discord before doing anything.
+> ⚠️ This guide assumes that you don't have any experience with git. If you already know how to use git, you can skip the "Initial setup" section.
 
 ## Table of contents
 
-- [Table of contents](#table-of-contents)
-- [1. Setting everything up (you only need to do this once)](#1-setting-everything-up-you-only-need-to-do-this-once)
-  - [1.1. GitHub](#11-github)
-  - [1.2. Visual Studio Code](#12-visual-studio-code)
-  - [1.3. Git](#13-git)
-  - [1.4. Clone the repository](#14-clone-the-repository)
-- [2. Modding and working as a team](#2-modding-and-working-as-a-team)
-  - [2.1. Creating a branch](#21-creating-a-branch)
-  - [2.2. Modding and committing changes](#22-modding-and-committing-changes)
-    - [2.2.1. Modding](#221-modding)
-    - [2.2.2. Committing changes](#222-committing-changes)
-    - [2.2.3. Pushing changes](#223-pushing-changes)
-    - [2.2.4. Merging your branch with the main project**](#224-merging-your-branch-with-the-main-project)
-  - [2.3. Updating your local copy](#23-updating-your-local-copy)
-    - [Updating your local branch](#updating-your-local-branch)
-    - [Updating your local main branch](#updating-your-local-main-branch)
-  - [2.4. Viewing the history of changes](#24-viewing-the-history-of-changes)
+- [Preliminary steps](#preliminary-steps)
+  - [Preliminary steps](#preliminary-steps)
+  - [Installing Visual Studio Code](#installing-visual-studio-code)
+  - [Installing and configuring Git](#installing-and-configuring-git)
+  - [Cloning the repository](#cloning-the-repository)
+  - [Opening the repository in VSCode](#opening-the-repository-in-vscode)
+- [How to contribute](#how-to-contribute)
+  - [Creating a new branch](#creating-a-new-branch)
+  - [Making changes](#making-changes)
+  - [Committing changes](#committing-changes)
+  - [Pushing changes](#pushing-changes)
+- [What happens next?](#what-happens-next)
+- [Conclusion](#conclusion)
 
-## 1. Setting everything up (you only need to do this once)
+## Preliminary steps
 
-### 1.1. GitHub
+### Installing Visual Studio Code
 
-- Create a GitHub account: <https://github.com/signup>
-- Tell me your GitHub username so I can add you as a collaborator.
+While you can use any editor you want, you are encouraged to use [Visual Studio Code](https://code.visualstudio.com/) (VSCode), because it has built-in Git support. After installing VSCode, open it and install the following extensions (press `Ctrl+Shift+X` to open the extensions panel):
 
-### 1.2. Visual Studio Code
+- Git History (because you might want to see the history of modifications)
+- Git Blame (because you might want to see who made a specific modification)
 
-- Download and install Visual Studio Code: <https://code.visualstudio.com/>
-- Run it, press `Ctrl-Shift-X` and install the following extensions (use the search bar):
-  - Git Blame
-  - Git History
+### Installing and configuring Git
 
-### 1.3. Git
+Download and install [Git](https://git-scm.com/download/win). During the installation process, you'll be asked to choose the default editor for Git. Choose Visual Studio Code. Use the default options for the rest of the installation.
 
-- Download and install Git: <https://git-scm.com/downloads> (use the default options, but make sure to select Visual Studio Code as the default editor).
-- Go back to Visual Studio Code, click on `Terminal` and then `New Terminal`.
+Once you have Git installed, you need to configure it by following these steps:
+
+- Open a command prompt (press `Win+R` and type `cmd`).
 - Type `git config --global user.name "Your Name"` (don't remove the quotes) and press `Enter`.
 - Type `git config --global user.email "youremail@example.com"` (don't remove the quotes) and press `Enter`.
 
-### 1.4. Clone the repository
+You cannot make any contribution until you have done that configuration.
 
-- Still in VSCode's Terminal, type `cd "C:\Users\Your Name\Games\Age of Empires 3 DE\XXXXXXXXXXXXXXXXX\mods\local"` and Press `Enter`.
-- Type `code .` and press `Enter`. A new window should open. You can close the old one.
-- In the new window, click on `Terminal` and then `New Terminal`.
-- Type `git clone https://github.com/thinotmandresy/age-of-pirates.git` and press `Enter`. A new folder called `age-of-pirates` should appear in the "local" folder.
-- Type `cd age-of-pirates` and press `Enter`.
-- Type `code .` and press `Enter`. A new window should open. You can close the old one.
-  - Alternatively, you can open the `age-of-pirates` folder in Visual Studio Code by clicking on `File` and then `Open Folder...`.
+### Cloning the repository
 
-Congratulations, you're ready to start modding!
+All Age of Pirates files are stored in something called a "repository". That repository is stored here on GitHub (actually, you are currently viewing it on this very page). You can have a copy of the repository on your computer by "cloning" it. The repository on your computer is called a "local" repository, and the one on GitHub is called a "remote" repository. You will be working on your local repository using VSCode, and then you will "push" (upload) your changes to the remote repository so that everyone can see and use them.
 
-## 2. Modding and working as a team
+To clone the repository, follow these steps:
 
-### 2.1. Creating a branch
+- Open a command prompt (press `Win+R` and type `cmd`).
+- Type `cd %USERPROFILE%\Games\Age of Empires 3 DE\XXXXXXXXXXXXXXXXX\mods\local` (replace `XXXXXXXXXXXXXXXXX` with whatever you have on your computer) and press `Enter`.
+- Type `git clone https://github.com/thinotmandresy/age-of-pirates.git` and press `Enter`.
+- Wait for the cloning to finish.
 
-To avoid conflicts, each team member will work on their own branch. Basically, a branch is like a copy of the main project, and when you modify something in your branch, it doesn't affect the main project. When you're sure that your changes are ready, you can merge your branch with the main project.
+If the cloning was successful, you should now have a folder called `age-of-pirates` in your `mods\local` folder. That folder is your local repository. You can rename that folder if you want.
 
-- With the `age-of-pirates` folder open in Visual Studio Code, you should see a tiny icon on the bottom left corner that says `main` (it's quite small, lol). Click on it and select `Create new branch...`.
-- Type your name and press `Enter`. A new branch should be created and you should see your name instead of `main` now.
-- **IMPORTANT**: Every time you're modding, that little icon should be the very first thing you look at. If it doesn't say your name, click on it and select your branch.
+### Opening the repository in VSCode
 
-### 2.2. Modding and committing changes
+You won't have the full power of VSCode + Git if you just edit files individually. Instead, you need to open the repository in VSCode. To do so, just run VSCode, click on "File" at the top left corner, then click on "Open Folder...", and select the folder you just cloned.
 
-#### 2.2.1. Modding
+To verify that everything went well, click on "Terminal" in the top menu, then click on "New Terminal". A terminal should open at the bottom of the window. Type `git status` and press `Enter`. If everything went well, you should see something like this:
 
-- Open the `age-of-pirates` folder in Visual Studio Code.
-- Make your changes.
+```text
+On branch main
+Your branch is up to date with 'origin/main'.
 
-#### 2.2.2. Committing changes
+nothing to commit, working tree clean
+```
 
-A "commit" is basically a save point (like when you play a game and you save your progress). A commit should group one or multiple changes that are related to each other. For example, if you've added a few new maps, you should add these maps in a single commit saying something like "Added X new maps" or something like that. It helps to keep things organized and can be used as a very detailed changelog (among other very useful things).
+Congratulations! You made it through the initial setup!
 
-- Press `Ctrl-Shift-G` (or click on the Git icon on the left side of the screen).
-- You should see a list of files that you've modified. Click on the `+` icon next to the files that you want to add to the commit (you can also click on the `+` icon at the top to add all the files at once).
-- **IMPORTANT**: Make sure that you only add the files that are used by the game. Photoshop's PSD files, for example, should not be added to the commit. Same thing for TGA and FBX files or any other file that is useful for *you* but not for the game or the other team members.
-- Type a commit message (something like "Added X new maps") and click `Commit` (the checkmark icon).
+## How to contribute
 
-#### 2.2.3. Pushing changes
+### Creating a new branch
 
-A commit is only saved locally on your computer. To save it on GitHub, you need to push it.
+It is not possible to make changes directly on the main version of Age of Pirates (called the "main branch"). Instead, all changes must be made on a separate branch.
 
-- Press `Ctrl-Shift-G` (or click on the Git icon on the left side of the screen).
-- Click on the 3 dots icon at the top and select `Push`.
+As a general rule, each contributor should have their own branch. Other branches can be created for specific purposes, such as fixing a specific bug or adding a specific feature. You can see the list of branches [here](https://github.com/thinotmandresy/age-of-pirates/branches).
 
-You will probably be asked to log in to your GitHub account. Do it and wait for the push to finish.
+To create a new branch, follow these steps:
 
-#### 2.2.4. Merging your branch with the main project**
+- The current branch is displayed at the bottom left corner of the VSCode window. For now, it should say `main`. Click on it, then click on "Create new branch".
+- Type the name of the branch and press `Enter`. This will create the branch on your local repository.
+  You should now see the branch's name at the bottom left corner of the VSCode window. That means you are now working on that branch. You can switch between different branches by clicking on the branch name at the bottom left corner of the VSCode window.
+  > ℹ️ **Notes**:
+  >
+  > - You should create a branch named after yourself, to make it clear that it is your branch. Contributors will avoid making changes to each other's branches.
+  > - For branches that are created for specific purposes, you should use a short, descriptive name. For example, if you are adding a new feature, you could name your branch `add-feature-X` (where `X` is the name of the feature).
+  >
+  > ⚠️ **Important**: You should always make sure that you are working on the correct branch before making any changes. In fact, for good measure, you should frequently have your eyes on the bottom left corner of the VSCode window to make sure you are working on the correct branch.
+- Press `Ctrl+Shift+G` to open the "Source Control" panel, then click on the "Publish branch" button. This will create the branch on the remote repository.
 
-Once you're sure that your changes are ready, you can merge your branch with the main project. This will add your changes to the main project.
+### Making changes
 
-- Go to the repository page on GitHub: <https://github.com/thinotmandresy/age-of-pirates>
-- Click on `Pull requests` and then `New pull request`.
-- Select your branch and click on `Create pull request`.
-- Type a title and a description for your pull request and click on `Create pull request` again. For example, if your commits are mostly about fixing bugs, you can write something like "Fixed X bugs" and add more information in the description.
-- Ping me and I will merge your branch with the main project.
+Now that you have your own branch, you can make changes to the game files. You can do that by editing the files directly in VSCode. You can also use the "Source Control" panel (`Ctrl+Shift+G`) to see the changes you made, and to revert them if necessary.
 
-### 2.3. Updating your local copy
+### Committing changes
 
-If you want to update your local copy with the latest changes from the main project, you need to pull the changes.
+Once you are done making changes, you need to "commit" them. Committing changes means that you are saving them to your local repository. To commit changes, follow these steps:
 
-#### Updating your local branch
+- Go to the "Source Control" panel (`Ctrl+Shift+G`).
+- You should see a list of files that have been modified. Look for the files you want to add to the commit, and click on the "`+`" button next to them. This will add them to the commit.
+- Type a message in the "Message" box at the top of the "Source Control" panel. This message should describe the changes you made. For example, if you added a new unit, you could type "Added a new unit X".
+- Click on the "✓ Commit" button. This will commit the changes to your local repository.
 
-- Open the `age-of-pirates` folder in Visual Studio Code.
-- Switch to your branch.
-- Click on `Terminal` and then `New Terminal`.
-- Type `git pull origin main` and press `Enter`.
-- Type `git push` and press `Enter`.
+### Pushing changes
 
-#### Updating your local main branch
+Once you have committed your changes, you need to "push" them to the remote repository, so that everyone can see and use them. To push changes, follow these steps:
 
-- Open the `age-of-pirates` folder in Visual Studio Code.
-- Switch to the main branch.
-- Click on `Terminal` and then `New Terminal`.
-- Type `git pull` and press `Enter`.
+- Go to the "Source Control" panel (`Ctrl+Shift+G`).
+- Click on the "⋯" button at the top of the "Source Control" panel, then click on "Push". This will push your changes to the remote repository.
 
-### 2.4. Viewing the history of changes
+### Pulling changes
 
-- Open the `age-of-pirates` folder in Visual Studio Code.
-- Press `Ctrl-Shift-G` (or click on the Git icon on the left side of the screen).
-- Click on the history icon at the top (the clock icon).
+Contributors will frequently push changes to different branches in the remote repository. To update the local versions of those branches, you need to "pull" them. To pull changes, follow these steps:
 
-![Git history icon](/docs/assets/git-history-icon.png)
+- Switch to the branch you want to update.
+- Go to the "Source Control" panel (`Ctrl+Shift+G`).
+- Click on the "⋯" button at the top of the "Source Control" panel, then click on "Pull". This will pull the changes from the remote repository.
 
-- You can click on any commit to see the files that were added/modified/removed in that commit.
+> ⚠️ **Important**: You should always make sure that you are working on the latest version of a branch before making any changes.
 
-![Git history](/docs/assets/git-history.png)
+## What happens next?
 
-- Next to each file, you can click on the `Previous` button to see the differences from the previous commit.
+Once contributors agree that it's time to release a new version of Age of Pirates, here is what will happen:
 
-![Commit diff](/docs/assets/commit-diff.png)
+- The different branches will be merged into the main branch.
+- All branches will be deleted (except, of course, the main branch).
+- The new version of Age of Pirates will be released.
+- Contributors have to create new branches and start working on the next version of Age of Pirates.
+
+## Conclusion
+
+That's it! You now know how to contribute to Age of Pirates! If you have any questions, feel free to DM `AlistairJah#3499` or `roda2324#9206` on Discord.
