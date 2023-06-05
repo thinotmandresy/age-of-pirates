@@ -15,6 +15,8 @@
   - [Making changes](#making-changes)
   - [Committing changes](#committing-changes)
   - [Pushing changes](#pushing-changes)
+  - [Pulling changes](#pulling-changes)
+  - [Viewing the history of changes](#viewing-the-history-of-changes)
 - [What happens next?](#what-happens-next)
 - [Conclusion](#conclusion)
 
@@ -117,6 +119,17 @@ Contributors will frequently push changes to different branches in the remote re
 - Click on the "⋯" button at the top of the "Source Control" panel, then click on "Pull". This will pull the changes from the remote repository.
 
 > ⚠️ **Important**: You should always make sure that you are working on the latest version of a branch before making any changes.
+
+### Viewing the history of changes
+
+You might find it useful to view the commit history of a branch. To do so, follow these steps:
+
+- Switch to the branch you want to view.
+- Go to the "Source Control" panel (`Ctrl+Shift+G`).
+- Click on the clock icon at the top of the "Source Control" panel. This will open the commit history of the branch.
+  You can click on a commit to see the files that were added/modified/removed in that commit, and compare them to the previous version of the files (if any).
+
+![Commit history](/docs/images/git-history.png)
 
 ## What happens next?
 

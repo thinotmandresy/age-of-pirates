@@ -65,6 +65,7 @@ The next time you launch the game, the mod should be available in your game **In
 
 - [BaltazarGreat](https://forums.ageofempires.com/u/BaltazarGreat) &mdash; Author of the Age of Pirates mod (this mod).
 - [AssertiveWall20](https://forums.ageofempires.com/u/AssertiveWall20) &mdash; Author of the [Assertive Seawall AI](https://www.ageofempires.com/mods/details/127562) mod. Check also the [discussion thread](https://forums.ageofempires.com/t/assertive-seawall-ai/221818).
+- [AlistairJah](https://forums.ageofempires.com/u/AlistairJah) &mdash; Author of the [AOE3 (Legacy) AI Scripting Guide](https://eso-community.net/viewtopic.php?t=19871) and the [AOE3 XS VSCode Extension](https://marketplace.visualstudio.com/items?itemName=alistairjah.age3xs). Also wrote AI scripts for two of the biggest AOE3 (legacy) mods ([Wars of Liberty](https://aoe3wol.com) and [Improvement Mod](https://impmod.blogspot.com)), and extended Legacy AOE3's XS language with new native functions.
 
 ## Contributing
 
